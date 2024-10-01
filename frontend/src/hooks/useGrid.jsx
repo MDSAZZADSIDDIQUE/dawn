@@ -1,5 +1,5 @@
 import { useAtom } from "jotai";
-import { mapAtom } from "../components/farm-simulator-components/SocketManager";
+import { mapAtom } from "../components/farming-simulator-components/SocketManager";
 
 import * as THREE from "three";
 

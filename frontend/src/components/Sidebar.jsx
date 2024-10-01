@@ -2,38 +2,40 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <ul className="menu bg-base-200 rounded-box w-56 min-h-screen">
+    <ul className="menu bg-base-200 rounded-box w-96 min-h-screen">
       <li>
         <a>Item 1</a>
       </li>
       <li>
         <details open>
-          <summary>Parent</summary>
+          <summary>Farming Assistant</summary>
           <ul>
             <li>
-              <a>Submenu 1</a>
+              <a href="crop-recommendation">Crop Recommendation</a>
             </li>
             <li>
-              <a>Submenu 2</a>
+              <a href="fertilizers-recommendation">Fertilizer Recommendation</a>
             </li>
             <li>
-              <details open>
-                <summary>Parent</summary>
-                <ul>
-                  <li>
-                    <a>Submenu 1</a>
-                  </li>
-                  <li>
-                    <a>Submenu 2</a>
-                  </li>
-                </ul>
-              </details>
+              <a href="plant-growth-stage">Plant Growth Stage</a>
+            </li>
+            <li>
+              <a href="crop-yield-prediction">Crop Yeild Prediction</a>
+            </li>
+            <li>
+              <a href="plant-disease-detection">Plant Disease Detection</a>
+            </li>
+            <li>
+              <a href="pest-detection">Pest Detection</a>
             </li>
           </ul>
         </details>
       </li>
       <li>
-        <a>Item 3</a>
+        <a href="/farming-calendar">Farming Calendar</a>
+      </li>
+      <li>
+        <a href="/farming-simulator">Farming Simulator</a>
       </li>
     </ul>
   );

@@ -1,11 +1,14 @@
 import { ScrollControls } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useAtom } from "jotai";
-import { Experience } from "../components/farm-simulator-components/Experience";
-import { SocketManager } from "../components/farm-simulator-components/SocketManager";
-import { UI, shopModeAtom } from "../components/farm-simulator-components/UI";
+import { Experience } from "../components/farming-simulator-components/Experience";
+import { SocketManager } from "../components/farming-simulator-components/SocketManager";
+import {
+  UI,
+  shopModeAtom,
+} from "../components/farming-simulator-components/UI";
 
-function FarmSimulatorPage() {
+function FarmingSimulatorPage() {
   const [shopMode] = useAtom(shopModeAtom);
   return (
     <div className="relative h-screen w-screen">
@@ -28,4 +31,4 @@ function FarmSimulatorPage() {
   );
 }
 
-export default FarmSimulatorPage;
+export default FarmingSimulatorPage;

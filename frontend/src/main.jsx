@@ -27,6 +27,7 @@ import SoilMoistureMonitoringPage from "./pages/SoilMoistureMonitoringPage.jsx";
 import AirTemperatureAndHumidityMonitoringPage from "./pages/AirTemperatureAndHumidityMonitoringPage.jsx";
 import SoilTemperatureMonitoring from "./pages/SoilTemperatureMonitoring.jsx";
 import SoilPHAndWaterPHMonitoringPage from "./pages/SoilPHAndWaterPHMonitoringPage.jsx";
+import ExoplanetExplorationPage from "./pages/ExoplanetExplorationPage.jsx";
 registerLicense(
   "Ngo9BigBOggjHTQxAR8/V1NDaF5cWGJCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWH9ecnRSQmNcV01zX0A="
 );
@@ -82,6 +83,10 @@ const router = createBrowserRouter(
         />
       </Route>
       <Route path="yo" element={<AnamolyDetection />} />
+      <Route
+        path="exoplanet-exploration"
+        element={<ExoplanetExplorationPage />}
+      />
       <Route path="why" element={<NDVI />} />
     </Route>
   )

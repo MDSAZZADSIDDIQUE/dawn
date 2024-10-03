@@ -94,7 +94,7 @@ const FarmMonitoringHistoryPage = () => {
     },
   ];
   return (
-    <div className="overflow-x-auto">
+    <div className="overflow-x-auto bg-primary-content bg-opacity-75">
       <table className="table">
         <thead>
           <tr>

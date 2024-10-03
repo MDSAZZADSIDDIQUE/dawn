@@ -15,8 +15,8 @@ const GeoLocation = () => {
   ) : !isGeolocationEnabled ? (
     <div>Geolocation is not enabled</div>
   ) : coords ? (
-    <div>
-      <h1>Your Location</h1>
+    <div className="text-xl">
+      <h1>📍 Your Location 📍</h1>
       <h1>
         Latitude: {coords.latitude}, Longitude: {coords.longitude}
       </h1>

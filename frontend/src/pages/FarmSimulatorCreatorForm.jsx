@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import GeoLocation from "./GeoLocation";
 
-const FarmingSchedulerCreationForm = () => {
+const FarmSimulatorCreatorForm = () => {
   const navigate = useNavigate();
   const navigateToFarmingCalendar = () => {
-    navigate("/farming-calendar");
+    navigate("/farming-simulator");
   };
   const [selectedValue, setSelectedValue] = useState(null);
   const onchange = (args) => {
@@ -24,7 +24,7 @@ const FarmingSchedulerCreationForm = () => {
       <div className="hero-content text-neutral-content text-center">
         <div className="card shadow-xl bg-base-100 bg-opacity-75">
           <div className="card-body flex justify-center items-center space-y-3">
-            <h2 className="card-title text-3xl">Farming Scheduler Creation</h2>
+            <h2 className="card-title text-3xl">Farming Simulator Creation</h2>
             <GeoLocation />
             <form
               onSubmit={navigateToFarmingCalendar}
@@ -42,19 +42,38 @@ const FarmingSchedulerCreationForm = () => {
                   }}
                 />
               </label>
-
-              <label className="text-xl">Starting Date: </label>
-              <div className="control-pane">
-                <div className="control-section">
-                  <div
-                    className="calendar-control-section"
-                    style={{ overflow: "auto" }}
-                  >
-                    <CalendarComponent change={onchange}></CalendarComponent>
-                  </div>
-                </div>
-              </div>
-              <h1 className="text-xl">Selected Value: {selectedValue} </h1>
+              <label className="input input-bordered flex items-center gap-2 w-full">
+                Field Size
+                <input
+                  type="text"
+                  className="grow"
+                  placeholder="Width x Height"
+                  name="n"
+                  onChange={(event) => {
+                    setN(event.target.value);
+                  }}
+                />
+              </label>
+              <select className="select select-bordered w-full max-w-xs">
+                <option disabled selected>
+                  Field Shape
+                </option>
+                <option>Square</option>
+                <option>Rectangular</option>
+                <option>Irregular</option>
+              </select>
+              <label className="input input-bordered flex items-center gap-2 w-full">
+                Budget
+                <input
+                  type="text"
+                  className="grow"
+                  placeholder="2,000,000 Taka"
+                  name="n"
+                  onChange={(event) => {
+                    setN(event.target.value);
+                  }}
+                />
+              </label>
               <button className="btn btn-primary w-full" type="submit">
                 Create
               </button>
@@ -66,4 +85,4 @@ const FarmingSchedulerCreationForm = () => {
   );
 };
 
-export default FarmingSchedulerCreationForm;
+export default FarmSimulatorCreatorForm;

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 
 const FertilizersRecommendationPage = () => {
   const [temperature, setTemperature] = useState(null);
@@ -40,10 +39,16 @@ const FertilizersRecommendationPage = () => {
   };
 
   return (
-    <div className="flex-1">
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body flex justify-center items-center space-y-3">
-          <h2 className="card-title">Fertilizer Recommendation</h2>
+    <div
+      className="hero min-h-screen"
+      style={{
+        backgroundImage:
+          "url('closeup-shot-rice-plant-sunset-with-plantation-background.jpg')",
+      }}
+    >
+      <div className="card bg-base-100 bg-opacity-75 shadow-xl m-5">
+        <div className="card-body flex justify-center items-center space-y-6">
+          <h2 className="card-title text-3xl">Fertilizer Recommendation</h2>
           <form
             onSubmit={handleSubmit}
             className="flex justify-center items-center flex-col space-y-6"
@@ -53,7 +58,7 @@ const FertilizersRecommendationPage = () => {
               <input
                 type="text"
                 className="grow"
-                placeholder="Daisy"
+                placeholder="20.87974371"
                 name="n"
                 onChange={(event) => {
                   setTemperature(event.target.value);
@@ -65,7 +70,7 @@ const FertilizersRecommendationPage = () => {
               <input
                 type="text"
                 className="grow"
-                placeholder="Daisy"
+                placeholder="82.00274423"
                 name="p"
                 onChange={(event) => {
                   setHumidity(event.target.value);
@@ -77,7 +82,7 @@ const FertilizersRecommendationPage = () => {
               <input
                 type="text"
                 className="grow"
-                placeholder="Daisy"
+                placeholder="23.7"
                 name="k"
                 onChange={(event) => {
                   setMoisture(event.target.value);
@@ -99,7 +104,7 @@ const FertilizersRecommendationPage = () => {
               <input
                 type="text"
                 className="grow"
-                placeholder="Daisy"
+                placeholder="Cereal Crops"
                 name="temperature"
                 onChange={(event) => {
                   setCropType(event.target.value);
@@ -111,7 +116,7 @@ const FertilizersRecommendationPage = () => {
               <input
                 type="text"
                 className="grow"
-                placeholder="Daisy"
+                placeholder="90"
                 name="humidity"
                 onChange={(event) => {
                   setNitrogen(event.target.value);
@@ -123,7 +128,7 @@ const FertilizersRecommendationPage = () => {
               <input
                 type="text"
                 className="grow"
-                placeholder="Daisy"
+                placeholder="43"
                 name="ph"
                 onChange={(event) => {
                   setPotassium(event.target.value);
@@ -135,7 +140,7 @@ const FertilizersRecommendationPage = () => {
               <input
                 type="text"
                 className="grow"
-                placeholder="Daisy"
+                placeholder="42"
                 name="rainfall"
                 onChange={(event) => {
                   setPhosphorous(event.target.value);
@@ -146,20 +151,17 @@ const FertilizersRecommendationPage = () => {
             <button className="btn btn-primary w-full" type="submit">
               Predict
             </button>
+            {prediction && (
+              <>
+                <h2 className="card-title btn btn-primary w-full">
+                  {prediction.class}
+                </h2>
+              </>
+            )}
           </form>
 
           {loading && (
             <span className="loading loading-spinner text-primary loading-lg"></span>
-          )}
-
-          {prediction && (
-            <>
-              <h2 className="card-title">{prediction.class}</h2>
-              {/* <p>{prediction.confidence}%</p> */}
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Learn More</button>
-              </div>
-            </>
           )}
         </div>
       </div>

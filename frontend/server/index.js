@@ -15,24 +15,368 @@ const items = {
     name: "Crops",
     size: [0, 0],
   },
-  fieldOfCrops: {
-    name: "Field of crops",
-    size: [14, -14],
-  },
   fieldOfWheat: {
-    name: "Field of wheat",
-    size: [4, 0],
+    name: "Field Of Wheat",
+    size: [4, 2],
   },
-  fieldOfCorn: {
-    name: "Field of corn",
-    size: [6, -6],
+  water: {
+    name: "Water",
+    size: [1, 0],
+  },
+};
+
+const farmItem = {
+  farm: {
+    name: "Farm",
+    size: [0, 0],
+  },
+  tractor: {
+    name: "Tractor",
+    size: [0, 0],
   },
 };
 
 const map = {
-  size: [50, 50],
+  size: [35, 35],
   gridDivision: 2,
-  items: [],
+  items: [
+    {
+      ...farmItem.farm,
+      gridPosition: [15, 15],
+    },
+    {
+      ...farmItem.tractor,
+      gridPosition: [30, 15],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [35, 35],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [35, 37],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [35, 39],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [35, 41],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [35, 43],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [35, 45],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [37, 35],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [37, 37],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [37, 39],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [37, 41],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [37, 43],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [37, 45],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [39, 35],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [39, 37],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [39, 39],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [39, 41],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [39, 43],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [39, 45],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [41, 35],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [41, 37],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [41, 39],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [41, 41],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [41, 43],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [41, 45],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [43, 35],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [43, 37],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [43, 39],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [43, 41],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [43, 43],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [43, 45],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [45, 35],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [45, 37],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [45, 39],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [45, 41],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [45, 43],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [45, 45],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [35, 47],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [37, 47],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [39, 47],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [41, 47],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [43, 47],
+    },
+    {
+      ...items.fieldOfWheat,
+      gridPosition: [45, 47],
+    },
+    {
+      ...items.water,
+      gridPosition: [35, 35],
+    },
+    {
+      ...items.water,
+      gridPosition: [38, 35],
+    },
+    {
+      ...items.water,
+      gridPosition: [41, 35],
+    },
+    {
+      ...items.water,
+      gridPosition: [44, 35],
+    },
+    {
+      ...items.water,
+      gridPosition: [35, 38],
+    },
+    {
+      ...items.water,
+      gridPosition: [38, 38],
+    },
+    {
+      ...items.water,
+      gridPosition: [41, 38],
+    },
+    {
+      ...items.water,
+      gridPosition: [44, 38],
+    },
+    {
+      ...items.water,
+      gridPosition: [35, 41],
+    },
+    {
+      ...items.water,
+      gridPosition: [38, 41],
+    },
+    {
+      ...items.water,
+      gridPosition: [41, 41],
+    },
+    {
+      ...items.water,
+      gridPosition: [44, 41],
+    },
+    {
+      ...items.water,
+      gridPosition: [35, 44],
+    },
+    {
+      ...items.water,
+      gridPosition: [38, 44],
+    },
+    {
+      ...items.water,
+      gridPosition: [41, 44],
+    },
+    {
+      ...items.water,
+      gridPosition: [44, 44],
+    },
+    {
+      ...items.water,
+      gridPosition: [35, 46],
+    },
+    {
+      ...items.water,
+      gridPosition: [38, 46],
+    },
+    {
+      ...items.water,
+      gridPosition: [41, 46],
+    },
+    {
+      ...items.water,
+      gridPosition: [44, 46],
+    },
+    {
+      ...items.crops,
+      gridPosition: [28, 35],
+    },
+    {
+      ...items.crops,
+      gridPosition: [25, 35],
+    },
+    {
+      ...items.crops,
+      gridPosition: [22, 35],
+    },
+    {
+      ...items.crops,
+      gridPosition: [19, 35],
+    },
+    {
+      ...items.crops,
+      gridPosition: [16, 35],
+    },
+    {
+      ...items.crops,
+      gridPosition: [28, 39],
+    },
+    {
+      ...items.crops,
+      gridPosition: [25, 39],
+    },
+    {
+      ...items.crops,
+      gridPosition: [22, 39],
+    },
+    {
+      ...items.crops,
+      gridPosition: [19, 39],
+    },
+    {
+      ...items.crops,
+      gridPosition: [16, 39],
+    },
+    {
+      ...items.crops,
+      gridPosition: [28, 43],
+    },
+    {
+      ...items.crops,
+      gridPosition: [25, 43],
+    },
+    {
+      ...items.crops,
+      gridPosition: [22, 43],
+    },
+    {
+      ...items.crops,
+      gridPosition: [19, 43],
+    },
+    {
+      ...items.crops,
+      gridPosition: [16, 43],
+    },
+    {
+      ...items.crops,
+      gridPosition: [28, 47],
+    },
+    {
+      ...items.crops,
+      gridPosition: [25, 47],
+    },
+    {
+      ...items.crops,
+      gridPosition: [22, 47],
+    },
+    {
+      ...items.crops,
+      gridPosition: [19, 47],
+    },
+    {
+      ...items.crops,
+      gridPosition: [16, 47],
+    },
+  ],
 };
 
 const grid = new pathfinding.Grid(
@@ -100,7 +444,7 @@ io.on("connection", (socket) => {
 
   characters.push({
     id: socket.id,
-    position: [50, 50],
+    position: [35, 35],
   });
 
   socket.emit("hello", {

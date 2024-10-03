@@ -34,38 +34,50 @@ const PlantGrowthStagePage = () => {
   };
 
   return (
-    <div className="flex-1">
-      <div className="card bg-base-100 shadow-xl">
-        <div className="card-body flex justify-center items-center space-y-3">
-          <h2 className="card-title">Plant Growth Stage</h2>
-          <form
-            onSubmit={handleSubmit}
-            className="flex justify-center items-center flex-col space-y-2"
-          >
-            <input
-              type="file"
-              className="file-input file-input-bordered file-input-primary w-full max-w-xs"
-              onChange={handleFileChange}
-            />
-            <figure>{imageURL && <img src={imageURL} ref={imageRef} />}</figure>
-            <button className="btn btn-primary w-full" type="submit">
-              Predict
-            </button>
-          </form>
+    <div
+      className="hero min-h-screen"
+      style={{
+        backgroundImage:
+          "url('closeup-shot-rice-plant-sunset-with-plantation-background.jpg')",
+      }}
+    >
+      <div className="hero-content text-neutral-content text-center">
+        <div className="flex-1">
+          <div className="card bg-base-100 shadow-xl bg-opacity-75 w-96">
+            <div className="card-body flex justify-center items-center space-y-6">
+              <h2 className="card-title text-3xl">Plant Growth Stage</h2>
+              <form
+                onSubmit={handleSubmit}
+                className="flex justify-center items-center flex-col space-y-2"
+              >
+                <input
+                  type="file"
+                  className="file-input file-input-bordered file-input-primary w-full max-w-xs"
+                  onChange={handleFileChange}
+                />
+                <figure>
+                  {imageURL && <img src={imageURL} ref={imageRef} />}
+                </figure>
+                <button className="btn btn-primary w-full" type="submit">
+                  Predict
+                </button>
+                {prediction && (
+                  <>
+                    <h2 className="btn btn-primary w-full">
+                      {prediction.class}
+                    </h2>
+                    <p className="btn btn-primary w-full">
+                      Confidence Score: {prediction.confidence}%
+                    </p>
+                  </>
+                )}
+              </form>
 
-          {loading && (
-            <span className="loading loading-spinner text-primary loading-lg"></span>
-          )}
-
-          {prediction && (
-            <>
-              <h2 className="card-title">{prediction.class}</h2>
-              <p>{prediction.confidence}%</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">Learn More</button>
-              </div>
-            </>
-          )}
+              {loading && (
+                <span className="loading loading-spinner text-primary loading-lg"></span>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

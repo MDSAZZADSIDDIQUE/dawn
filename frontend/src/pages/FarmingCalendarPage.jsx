@@ -119,7 +119,7 @@ const FarmingCalendarPage = () => {
     },
   ];
   const calendarCollections = [
-    { CalendarText: "My Calendar", CalendarId: 1, CalendarColor: "#c43081" },
+    { CalendarText: "My Calendar", CalendarId: 1, CalendarColor: "#22C55E" },
     { CalendarText: "Company", CalendarId: 2, CalendarColor: "#ff7f50" },
     { CalendarText: "Birthday", CalendarId: 3, CalendarColor: "#AF27CD" },
     { CalendarText: "Holiday", CalendarId: 4, CalendarColor: "#808000" },

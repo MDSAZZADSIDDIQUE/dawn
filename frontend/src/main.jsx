@@ -9,17 +9,23 @@ import {
 import App from "./App.jsx";
 import Layout from "./components/Layout.jsx";
 import "./index.css";
-import DashboardPage from "./pages/DashboardPage.jsx";
-import FarmingSimulatorPage from "./pages/FarmingSimulatorPage.jsx";
 import CropRecommendationPage from "./pages/CropRecommendationPage.jsx";
-import PlantGrowthStagePage from "./pages/PlantGrowthStagePage.jsx";
-import PlantDiseaseDetectionPage from "./pages/PlantDiseaseDetectionPage.jsx";
 import CropYieldPredictionPage from "./pages/CropYieldPredictionPage.jsx";
-import PestDetectionPage from "./pages/PestDetectionPage.jsx";
+import DashboardPage from "./pages/DashboardPage.jsx";
+import CalendarApp from "./pages/FarmingCalendarPage.jsx";
+import FarmingSimulatorPage from "./pages/FarmingSimulatorPage.jsx";
 import FertilizersRecommendationPage from "./pages/FertilizersRecommendationPage.jsx";
-import FarmingCalendar from "./pages/FarmingCalendar.jsx";
-import CalendarApp from "./pages/FarmingCalendar.jsx";
-
+import PestDetectionPage from "./pages/PestDetectionPage.jsx";
+import PlantDiseaseDetectionPage from "./pages/PlantDiseaseDetectionPage.jsx";
+import PlantGrowthStagePage from "./pages/PlantGrowthStagePage.jsx";
+import { registerLicense } from "@syncfusion/ej2-base";
+import AnamolyDetection from "./pages/anomaly-detection/anomaly-detection.jsx";
+import Why from "./pages/Why.jsx";
+import NDVI from "./pages/NDVI.jsx";
+import FarmingSchedulerCreationForm from "./pages/FarmingSchedulerCreationForm.jsx";
+registerLicense(
+  "Ngo9BigBOggjHTQxAR8/V1NDaF5cWGJCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWH9ecnRSQmNcV01zX0A="
+);
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route>
@@ -46,7 +52,13 @@ const router = createBrowserRouter(
         />
         <Route path="pest-detection" element={<PestDetectionPage />} />
         <Route path="farming-calendar" element={<CalendarApp />} />
+        <Route
+          path="farming-scheduler-creation-form"
+          element={<FarmingSchedulerCreationForm />}
+        />
       </Route>
+      <Route path="yo" element={<AnamolyDetection />} />
+      <Route path="why" element={<NDVI />} />
     </Route>
   )
 );

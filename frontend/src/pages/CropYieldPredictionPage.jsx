@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
 
 const CropYieldPredictionPage = () => {
   const [cropType, setCropType] = useState(null);

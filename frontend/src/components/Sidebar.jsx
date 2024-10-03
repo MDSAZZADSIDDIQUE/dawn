@@ -2,7 +2,7 @@ import React from "react";
 
 const Sidebar = () => {
   return (
-    <ul className="menu bg-base-200 rounded-box w-96 min-h-screen">
+    <ul className="menu bg-base-100 rounded-box w-96 min-h-screen">
       <li>
         <a>Item 1</a>
       </li>

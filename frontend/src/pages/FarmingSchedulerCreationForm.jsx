@@ -15,7 +15,7 @@ const FarmingSchedulerCreationForm = () => {
   };
   return (
     <div className="flex-1">
-      <div className="card bg-base-100 shadow-xl">
+      <div className="card shadow-xl">
         <div className="card-body flex justify-center items-center space-y-3">
           <h2 className="card-title">Farming Scheduler Creation Form</h2>
           <GeoLocation />

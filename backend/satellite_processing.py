@@ -93,33 +93,91 @@ def process_soil_moisture(image_data):
     return soil_moisture_image
 
 
-def process_ndbi(image_data):
+def process_evi_rgb(image_data, L=1, C1=6, C2=7.5, G=2.5):
     img = Image.open(io.BytesIO(image_data.read()))
     img_array = np.array(img)
 
-    # Check the number of bands in the image
-    num_bands = img_array.shape[2] if len(img_array.shape) > 2 else 1
+    red = img_array[:, :, 0].astype(float)  # Red band
+    green = img_array[:, :, 1].astype(float)  # Green band
+    blue = img_array[:, :, 2].astype(float)  # Blue band
 
-    # NDBI calculation requires at least 5 bands (NIR, SWIR)
-    if num_bands >= 5:
-        swir = img_array[:, :, 4].astype(float)
-        nir = img_array[:, :, 3].astype(float)
-        ndbi = (swir - nir) / (swir + nir + 1e-10)
-    elif num_bands == 3:  # RGB image (fallback case)
-        # In the case of only 3 bands, we can't compute NDBI directly
-        raise ValueError(
-            "NDBI cannot be computed from an RGB image with only 3 bands.")
-    else:
-        raise ValueError("Unsupported number of bands: {}".format(num_bands))
+    evi = G * ((green - red) / (green + C1 * red - C2 * blue + L + 1e-10))
 
-    # Create a figure with a custom color map for built-up areas
     fig, ax = plt.subplots()
     cmap = mcolors.LinearSegmentedColormap.from_list(
-        "", ["green", "yellow", "red"])
-    ax.imshow(ndbi, cmap=cmap, vmin=-1, vmax=1)
+        "", ["red", "yellow", "green"])
+    ax.imshow(evi, cmap=cmap, vmin=-1, vmax=1)
     ax.axis('off')
 
-    # Save the figure to a BytesIO object
+    img_io = BytesIO()
+    fig.savefig(img_io, format='png', bbox_inches='tight')
+    img_io.seek(0)
+
+    return Image.open(img_io)
+
+
+def process_gli(image_data):
+    img = Image.open(io.BytesIO(image_data.read()))
+    img_array = np.array(img)
+
+    red = img_array[:, :, 0].astype(float)  # Red band
+    green = img_array[:, :, 1].astype(float)  # Green band
+    blue = img_array[:, :, 2].astype(float)  # Blue band
+
+    gli = (2 * green - red - blue) / (2 * green + red + blue + 1e-10)
+
+    fig, ax = plt.subplots()
+    cmap = mcolors.LinearSegmentedColormap.from_list(
+        "", ["red", "yellow", "green"])
+    ax.imshow(gli, cmap=cmap, vmin=-1, vmax=1)
+    ax.axis('off')
+
+    img_io = BytesIO()
+    fig.savefig(img_io, format='png', bbox_inches='tight')
+    img_io.seek(0)
+
+    return Image.open(img_io)
+
+
+def process_vari(image_data):
+    img = Image.open(io.BytesIO(image_data.read()))
+    img_array = np.array(img)
+
+    red = img_array[:, :, 0].astype(float)  # Red band
+    green = img_array[:, :, 1].astype(float)  # Green band
+    blue = img_array[:, :, 2].astype(float)  # Blue band
+
+    vari = (green - red) / (green + red - blue + 1e-10)
+
+    fig, ax = plt.subplots()
+    cmap = mcolors.LinearSegmentedColormap.from_list(
+        "", ["red", "yellow", "green"])
+    ax.imshow(vari, cmap=cmap, vmin=-1, vmax=1)
+    ax.axis('off')
+
+    img_io = BytesIO()
+    fig.savefig(img_io, format='png', bbox_inches='tight')
+    img_io.seek(0)
+
+    return Image.open(img_io)
+
+
+def process_exg(image_data):
+    img = Image.open(io.BytesIO(image_data.read()))
+    img_array = np.array(img)
+
+    red = img_array[:, :, 0].astype(float)
+    green = img_array[:, :, 1].astype(float)
+    blue = img_array[:, :, 2].astype(float)
+
+    exg = 2 * green - red - blue
+
+    fig, ax = plt.subplots()
+    cmap = mcolors.LinearSegmentedColormap.from_list(
+        "", ["red", "yellow", "green"])
+    ax.imshow(exg, cmap=cmap, vmin=-1, vmax=1)
+    ax.axis('off')
+
     img_io = BytesIO()
     fig.savefig(img_io, format='png', bbox_inches='tight')
     img_io.seek(0)

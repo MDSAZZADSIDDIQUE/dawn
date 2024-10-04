@@ -35,6 +35,10 @@ import ExoplanetLogin from "./pages/ExoplanetLogin.jsx";
 import CompanionCroppingPage from "./pages/CompanionCroppingPage.jsx";
 import AgroforestryPage from "./pages/AgroforestryPage.jsx";
 import CoverCropping from "./pages/CoverCroppingPage.jsx";
+import EVI from "./pages/EVI.jsx";
+import GLI from "./pages/GLI.jsx";
+import VARI from "./pages/VARI.jsx";
+import EXG from "./pages/EXG.jsx";
 registerLicense(
   "Ngo9BigBOggjHTQxAR8/V1NDaF5cWGJCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWH9ecnRSQmNcV01zX0A="
 );
@@ -100,6 +104,10 @@ const router = createBrowserRouter(
         <Route path="companion-cropping" element={<CompanionCroppingPage />} />
         <Route path="agro" element={<AgroforestryPage />} />
         <Route path="cover" element={<CoverCropping />} />
+        <Route path="evi" element={<EVI />} />
+        <Route path="gli" element={<GLI />} />
+        <Route path="vari" element={<VARI />} />
+        <Route path="exg" element={<EXG />} />
       </Route>
       <Route
         path="exoplanet-exploration"

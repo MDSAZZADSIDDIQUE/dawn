@@ -4,8 +4,10 @@ import ollama from "ollama";
 
 const DashboardPage = () => {
   const [chat, setChat] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const askQuestions = async () => {
+    setLoading(true);
     const response = await ollama.chat({
       model: "llama3.2",
       messages: [
@@ -17,6 +19,7 @@ const DashboardPage = () => {
     });
     console.log(response.message.content);
     setChat(response.message.content);
+    setLoading(false);
   };
 
   const parseTasks = (chatText) => {
@@ -74,6 +77,9 @@ const DashboardPage = () => {
           </div>
         ) : (
           <div className="btn btn-primary-content" onClick={askQuestions}>
+            {loading && (
+              <span className="loading loading-spinner text-primary loading-lg"></span>
+            )}
             <button>Generate tasks</button>
           </div>
         )}

@@ -181,10 +181,52 @@ def yo():
     return send_file(img_io, mimetype='image/png')
 
 
-@app.route('/ndbi', methods=['POST'])
-def ndbi():
+@app.route('/evi', methods=['POST'])
+def evi():
     image_data = request.files['image']
-    ndvi_image = sp.process_ndbi(image_data)
+    ndvi_image = sp.process_evi_rgb(image_data)
+
+    # Save the NDVI image to a BytesIO object
+    img_io = BytesIO()
+    ndvi_image.save(img_io, 'PNG')
+    img_io.seek(0)
+
+    # Send the image back to the client
+    return send_file(img_io, mimetype='image/png')
+
+
+@app.route('/gli', methods=['POST'])
+def gli():
+    image_data = request.files['image']
+    ndvi_image = sp.process_gli(image_data)
+
+    # Save the NDVI image to a BytesIO object
+    img_io = BytesIO()
+    ndvi_image.save(img_io, 'PNG')
+    img_io.seek(0)
+
+    # Send the image back to the client
+    return send_file(img_io, mimetype='image/png')
+
+
+@app.route('/vari', methods=['POST'])
+def vari():
+    image_data = request.files['image']
+    ndvi_image = sp.process_vari(image_data)
+
+    # Save the NDVI image to a BytesIO object
+    img_io = BytesIO()
+    ndvi_image.save(img_io, 'PNG')
+    img_io.seek(0)
+
+    # Send the image back to the client
+    return send_file(img_io, mimetype='image/png')
+
+
+@app.route('/exg', methods=['POST'])
+def exg():
+    image_data = request.files['image']
+    ndvi_image = sp.process_exg(image_data)
 
     # Save the NDVI image to a BytesIO object
     img_io = BytesIO()

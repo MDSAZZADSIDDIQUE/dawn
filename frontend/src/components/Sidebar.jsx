@@ -13,7 +13,7 @@ const Sidebar = () => {
         <a href="/yo">Anomaly Detection</a>
       </li>
       <li>
-        <details open>
+        <details>
           <summary>Farming Analysis from satellite imaging</summary>
           <ul>
             <li>
@@ -22,11 +22,23 @@ const Sidebar = () => {
             <li>
               <a href="soil-map">Soil Moisture Mapping</a>
             </li>
+            <li>
+              <a href="evi">Enhanced Vegetation Index (EVI)</a>
+            </li>
+            <li>
+              <a href="gli">Green Leaf Index (GLI)</a>
+            </li>
+            <li>
+              <a href="VARI">Visible Atmospherically Resistant Index (VARI)</a>
+            </li>
+            <li>
+              <a href="exg">Excess Green Index (ExG)</a>
+            </li>
           </ul>
         </details>
       </li>
       <li>
-        <details open>
+        <details>
           <summary>Carbon Farming</summary>
           <ul>
             <li>
@@ -42,7 +54,7 @@ const Sidebar = () => {
         </details>
       </li>
       <li>
-        <details open>
+        <details>
           <summary>Farming Monitoring</summary>
           <ul>
             <li>
@@ -70,7 +82,7 @@ const Sidebar = () => {
         </details>
       </li>
       <li>
-        <details open>
+        <details>
           <summary>Farming Assistant</summary>
           <ul>
             <li>

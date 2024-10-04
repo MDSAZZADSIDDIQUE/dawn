@@ -24,7 +24,7 @@ function AgroforestryPage() {
       messages: [
         {
           role: "user",
-          content: `How can we integrate ${question} in agroforestry system?`,
+          content: `How can we integrate ${question} in agroforestry system? Give me an short answer.`,
         },
       ],
     });

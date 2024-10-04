@@ -10,7 +10,7 @@ export interface MachineData {
 }
 
 let description: string =
-  "The factors that supporting the Production rate is relevant to the count produced, hence the row data is marked as normal data.";
+  "The factors that supporting the data is relevant to the count produced, hence the row data is marked as normal data.";
 
 export let machineDataList: MachineData[] = [
   {

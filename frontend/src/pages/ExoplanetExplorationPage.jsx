@@ -39,7 +39,7 @@ function ExoplanetExplorationPage() {
           <Experience />
         </ScrollControls>
       </Canvas>
-      <div className="absolute left-0 card bg-black w-96 flex flex-col justify-center items-center space-y-5 m-5 p-10 shadow-xl glass">
+      <div className="bg-opacity-25 absolute left-0 card bg-black w-96 flex flex-col justify-center items-center space-y-5 m-5 p-10 shadow-xl">
         <h1 className="text-3xl">Exoplanet Explorar</h1>
         {chat ? (
           <div className="chat chat-start">

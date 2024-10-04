@@ -17,17 +17,17 @@ import {
 } from "@syncfusion/ej2-react-charts";
 import { Browser } from "@syncfusion/ej2-base";
 export let data1 = [
-  { x: "2024-09-24", y: 23.7, toolTipMappingName: "Soil Moisture: 23.7" },
-  { x: "2024-09-25", y: 25.2, toolTipMappingName: "Soil Moisture: 25.2" },
-  { x: "2024-09-26", y: 22.9, toolTipMappingName: "Soil Moisture: 22.9" },
-  { x: "2024-09-27", y: 24.1, toolTipMappingName: "Soil Moisture: 24.1" },
-  { x: "2024-09-28", y: 23.5, toolTipMappingName: "Soil Moisture: 23.5" },
-  { x: "2024-09-29", y: 24.8, toolTipMappingName: "Soil Moisture: 24.8" },
-  { x: "2024-09-30", y: 25.0, toolTipMappingName: "Soil Moisture: 25.0" },
-  { x: "2024-10-1", y: 24.3, toolTipMappingName: "Soil Moisture: 24.3" },
-  { x: "2024-10-2", y: 24.5, toolTipMappingName: "Soil Moisture: 24.5" },
-  { x: "2024-10-3", y: 25.3, toolTipMappingName: "Soil Moisture: 25.3" },
-  { x: "2024-10-4", y: 24.5, toolTipMappingName: "Soil Moisture: 24.5" },
+  { x: "2024-09-24", y: 523.7, toolTipMappingName: "Soil Moisture: 23.7" },
+  { x: "2024-09-25", y: 525.2, toolTipMappingName: "Soil Moisture: 25.2" },
+  { x: "2024-09-26", y: 522.9, toolTipMappingName: "Soil Moisture: 22.9" },
+  { x: "2024-09-27", y: 524.1, toolTipMappingName: "Soil Moisture: 24.1" },
+  { x: "2024-09-28", y: 523.5, toolTipMappingName: "Soil Moisture: 23.5" },
+  { x: "2024-09-29", y: 524.8, toolTipMappingName: "Soil Moisture: 24.8" },
+  { x: "2024-09-30", y: 525.0, toolTipMappingName: "Soil Moisture: 25.0" },
+  { x: "2024-10-1", y: 524.3, toolTipMappingName: "Soil Moisture: 24.3" },
+  { x: "2024-10-2", y: 524.5, toolTipMappingName: "Soil Moisture: 24.5" },
+  { x: "2024-10-3", y: 525.3, toolTipMappingName: "Soil Moisture: 25.3" },
+  { x: "2024-10-4", y: 524.5, toolTipMappingName: "Soil Moisture: 24.5" },
 ];
 const SAMPLE_CSS = `
     .control-fluid {
@@ -73,8 +73,8 @@ const SoilMonitoringChart = () => {
             title: "Medal Count",
             majorTickLines: { width: 0 },
             lineStyle: { width: 0 },
-            maximum: 50,
-            interval: 10,
+            maximum: 600,
+            interval: 100,
           }}
           chartArea={{ border: { width: 0 } }}
           load={load.bind(this)}

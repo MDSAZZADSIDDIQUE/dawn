@@ -24,7 +24,7 @@ function CoverCropping() {
       messages: [
         {
           role: "user",
-          content: `What is the best cover crop for ${question}?`,
+          content: `What is the best cover crop for ${question}? Give me an short answer.`,
         },
       ],
     });

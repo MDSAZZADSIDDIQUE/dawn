@@ -24,7 +24,7 @@ function CompanionCroppingPage() {
       messages: [
         {
           role: "user",
-          content: `what is the best crop companion for ${question}?`,
+          content: `what is the best crop companion for ${question}? Give me an short answer.`,
         },
       ],
     });

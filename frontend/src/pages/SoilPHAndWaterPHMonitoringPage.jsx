@@ -17,10 +17,10 @@ const SoilPHAndWaterPHMonitoringPage = () => {
           <div className="stats shadow w-96">
             <div className="stat space-y-5">
               <div className="stat-title text-3xl">Soil pH</div>
-              <div className="stat-value text-primary text-5xl">30.2</div>
+              <div className="stat-value text-primary text-5xl">13.75</div>
               <div className="stat-desc text-xl">Soil pH is adequate.</div>
               <div className="stat-title text-3xl">Water pH</div>
-              <div className="stat-value text-primary text-5xl">75.4</div>
+              <div className="stat-value text-primary text-5xl">11.22</div>
               <div className="stat-desc text-xl">Water pH is Good.</div>
             </div>
           </div>

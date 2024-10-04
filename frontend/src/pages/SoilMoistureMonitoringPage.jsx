@@ -15,7 +15,7 @@ const SoilMoistureMonitoringPage = () => {
           <div className="stats shadow w-96">
             <div className="stat space-y-5">
               <div className="stat-title text-3xl">Soil Moisture</div>
-              <div className="stat-value text-primary text-5xl">23.7</div>
+              <div className="stat-value text-primary text-5xl">523</div>
               <div className="stat-desc text-xl">
                 Soil Moisture level is adequate.
               </div>

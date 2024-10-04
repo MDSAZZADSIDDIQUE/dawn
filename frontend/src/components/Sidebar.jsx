@@ -13,7 +13,7 @@ const Sidebar = () => {
         <a href="/yo">Anomaly Detection</a>
       </li>
       <li>
-        <details>
+        <details open>
           <summary>Farming Analysis from satellite imaging</summary>
           <ul>
             <li>

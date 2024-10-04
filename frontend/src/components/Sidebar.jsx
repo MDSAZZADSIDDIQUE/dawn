@@ -7,6 +7,41 @@ const Sidebar = () => {
         <a href="dashboard">Dashboard</a>
       </li>
       <li>
+        <a href="/farm-monitoring-history">Farm Monitoring History</a>
+      </li>
+      <li>
+        <a href="/yo">Anomaly Detection</a>
+      </li>
+      <li>
+        <details open>
+          <summary>Farming Analysis from satellite imaging</summary>
+          <ul>
+            <li>
+              <a href="why">NDVI image generation</a>
+            </li>
+            <li>
+              <a href="soil-map">Soil Moisture Mapping</a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
+        <details open>
+          <summary>Carbon Farming</summary>
+          <ul>
+            <li>
+              <a href="companion-cropping">Companion Cropping</a>
+            </li>
+            <li>
+              <a href="agro">Agroforestry</a>
+            </li>
+            <li>
+              <a href="cover">Cover Cropping</a>
+            </li>
+          </ul>
+        </details>
+      </li>
+      <li>
         <details open>
           <summary>Farming Monitoring</summary>
           <ul>
@@ -27,6 +62,9 @@ const Sidebar = () => {
               <a href="soil-ph-and-water-ph-monitoring">
                 Soil pH and Water pH Monitoring
               </a>
+            </li>
+            <li>
+              <a href="budget">Iot Expense Calculator</a>
             </li>
           </ul>
         </details>
@@ -61,6 +99,9 @@ const Sidebar = () => {
       </li>
       <li>
         <a href="/farming-simulator-creation-form">Farming Simulator</a>
+      </li>
+      <li>
+        <a href="/login">Exoplanet Exploration</a>
       </li>
     </ul>
   );

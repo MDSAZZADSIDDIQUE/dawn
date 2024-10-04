@@ -15,14 +15,10 @@ const HomePage = () => {
         <video className="videoTag" autoPlay loop muted>
           <source src={video} type="video/mp4" />
         </video>
-        <div className="hero-content text-neutral-content text-center">
+        <div className="hero-content text-primary-content text-center">
           <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
+            <h1 className="mb-5 text-5xl font-bold">DAWN</h1>
+            <p className="mb-5">Invent, Implement, Impact</p>
             <button className="btn btn-primary" onClick={navigateToLoginPage}>
               Get Started
             </button>

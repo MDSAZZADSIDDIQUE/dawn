@@ -28,6 +28,13 @@ import AirTemperatureAndHumidityMonitoringPage from "./pages/AirTemperatureAndHu
 import SoilTemperatureMonitoring from "./pages/SoilTemperatureMonitoring.jsx";
 import SoilPHAndWaterPHMonitoringPage from "./pages/SoilPHAndWaterPHMonitoringPage.jsx";
 import ExoplanetExplorationPage from "./pages/ExoplanetExplorationPage.jsx";
+import FarmMonitoringHistoryPage from "./pages/FarmMonitoringHistoryPage.jsx";
+import BudgetPage from "./pages/BudgetPage.jsx";
+import SoilMoistureMapping from "./pages/SoilMoistureMapping.jsx";
+import ExoplanetLogin from "./pages/ExoplanetLogin.jsx";
+import CompanionCroppingPage from "./pages/CompanionCroppingPage.jsx";
+import AgroforestryPage from "./pages/AgroforestryPage.jsx";
+import CoverCropping from "./pages/CoverCroppingPage.jsx";
 registerLicense(
   "Ngo9BigBOggjHTQxAR8/V1NDaF5cWGJCf1FpRmJGdld5fUVHYVZUTXxaS00DNHVRdkdnWH9ecnRSQmNcV01zX0A="
 );
@@ -81,13 +88,23 @@ const router = createBrowserRouter(
           path="soil-ph-and-water-ph-monitoring"
           element={<SoilPHAndWaterPHMonitoringPage />}
         />
+        <Route path="yo" element={<AnamolyDetection />} />
+        <Route
+          path="farm-monitoring-history"
+          element={<FarmMonitoringHistoryPage />}
+        />
+        <Route path="budget" element={<BudgetPage />} />
+        <Route path="why" element={<NDVI />} />
+        <Route path="soil-map" element={<SoilMoistureMapping />} />
+        <Route path="login" element={<ExoplanetLogin />} />
+        <Route path="companion-cropping" element={<CompanionCroppingPage />} />
+        <Route path="agro" element={<AgroforestryPage />} />
+        <Route path="cover" element={<CoverCropping />} />
       </Route>
-      <Route path="yo" element={<AnamolyDetection />} />
       <Route
         path="exoplanet-exploration"
         element={<ExoplanetExplorationPage />}
       />
-      <Route path="why" element={<NDVI />} />
     </Route>
   )
 );

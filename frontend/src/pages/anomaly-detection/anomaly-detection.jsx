@@ -63,7 +63,7 @@ function AnamolyDetection() {
   };
 
   function generatePrompt(data) {
-    return `Given the following datasource are bounded in the Grid table\n\n${data}.\n Return the anomaly data rows (ie. pick the ir-relevant datas mentioned in the corresponding table) present in the table mentioned above as like in the same format provided do not change the format. Example: Watch out the production rate count and the factors that is used to acheive the mentioned production rate(Temprature, Pressure, Motor Speed) If the production rate is not relevant to the concern factors mark it as anomaly Data. If it is anomaly data then due to which column data it is marked as anomaly that particular column name should be updated in the AnomalyFieldName. Also Update the AnomalyDescription stating that due to which reason it is marked as anomaly a short description. Example if the data is marked as anomaly due to the Temperature column, Since the mentioned temperature is too high than expected, it is marked as anomaly data.\n\nGenerate an output in JSON format only and Should not include any additional information or contents in response`;
+    return `Given the following datasource are bounded in the Grid table\n\n${data}.\n Return the anomaly data rows (ie. pick the ir-relevant datas mentioned in the corresponding table) present in the table mentioned above as like in the same format provided do not change the format. Example: Watch out the soil_moisture count and the factors that is used to acheive the mentioned production rate(air_temperature, humidiy, soil_temperature) If the soil_moisture is not relevant to the concern factors mark it as anomaly Data. If it is anomaly data then due to which column data it is marked as anomaly that particular column name should be updated in the AnomalyFieldName. Also Update the AnomalyDescription stating that due to which reason it is marked as anomaly a short description. Example if the data is marked as anomaly due to the Temperature column, Since the mentioned temperature is too high than expected, it is marked as anomaly data.\n\nGenerate an output in JSON format only and Should not include any additional information or contents in response`;
   }
   function CustomizeCell(args) {
     if (AIgeneratedData != null && AIgeneratedData.length > 0) {
@@ -71,7 +71,7 @@ function AnamolyDetection() {
       AIgeneratedData.map((e) => {
         if (
           !isNullOrUndefined(e.AnomalyFieldName) &&
-          e.MachineID === args.data.MachineID &&
+          e.timestamp === args.data.timestamp &&
           (e.AnomalyFieldName === args.column?.field ||
             args.column?.field === "AnomalyDescription")
         ) {
@@ -104,39 +104,45 @@ function AnamolyDetection() {
           >
             <ColumnsDirective>
               <ColumnDirective
-                field="MachineID"
+                field="timestamp"
                 isPrimaryKey={true}
-                headerText="Machine ID"
+                headerText="Timestamp"
                 textAlign="Right"
                 width={85}
               />
               <ColumnDirective
-                field="Temperature"
-                headerText="Temperature (C)"
+                field="soil_moisture"
+                headerText="Soil Moisture"
                 textAlign="Right"
                 width={120}
               />
               <ColumnDirective
-                field="Pressure"
-                headerText="Pressure (psi)"
+                field="air_temperature"
+                headerText="Air Temperature"
                 textAlign="Right"
                 width={100}
               />
               <ColumnDirective
-                field="Voltage"
-                headerText="Voltage (V)"
+                field="humidity"
+                headerText="Humidity"
                 textAlign="Right"
                 width={100}
               />
               <ColumnDirective
-                field="MotorSpeed"
-                headerText="Motor Speed (rpm)"
+                field="soil_temperature"
+                headerText="Soil Temperature"
                 textAlign="Right"
                 width={140}
               />
               <ColumnDirective
-                field="ProductionRate"
-                headerText="Production Rate (units/hr)"
+                field="soil_ph"
+                headerText="Soil pH"
+                textAlign="Right"
+                width={140}
+              />
+              <ColumnDirective
+                field="water_ph"
+                headerText="Water pH"
                 textAlign="Right"
                 width={140}
               />

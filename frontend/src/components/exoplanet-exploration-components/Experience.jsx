@@ -240,7 +240,7 @@ export const Experience = () => {
           receiveShadow
         >
           <planeGeometry args={map.size} />
-          <meshStandardMaterial color="#f0f0f0" />
+          <meshStandardMaterial color="#854D0E" />
         </mesh>
       )}
       {buildMode && !shopMode && (

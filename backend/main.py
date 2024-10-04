@@ -1,22 +1,27 @@
 # from flask_socketio import SocketIO, emit
+import satellite_processing as sp
 from flask import Response
 import numpy as np
 from ultralytics import YOLO
 # import cvzone
 import cv2
 import random
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify, send_file
 import tensorflow as tf
 from keras.preprocessing import image
 from flask_cors import CORS, cross_origin
 from flask import request
 import math
 import pickle
+import matplotlib.pyplot as plt
+import matplotlib.colors as mcolors
+from io import BytesIO
 
 app = Flask(__name__)
 
 CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
+app.debug = True
 class_name = [
     'Apple Apple scab',
     'Apple Black rot',
@@ -146,3 +151,45 @@ def pestDetection():
     oi = pest[p.argmax()]
     score = math.floor(float(p[0].max()) * 100)
     return jsonify({'class': oi, 'confidence': score})
+
+
+@app.route('/process-image', methods=['POST'])
+def process_image_route():
+    image_data = request.files['image']
+    ndvi_image = sp.process_image(image_data)
+
+    # Save the NDVI image to a BytesIO object
+    img_io = BytesIO()
+    ndvi_image.save(img_io, 'PNG')
+    img_io.seek(0)
+
+    # Send the image back to the client
+    return send_file(img_io, mimetype='image/png')
+
+
+@app.route('/soil-moisture-map', methods=['POST'])
+def yo():
+    image_data = request.files['image']
+    ndvi_image = sp.process_soil_moisture(image_data)
+
+    # Save the NDVI image to a BytesIO object
+    img_io = BytesIO()
+    ndvi_image.save(img_io, 'PNG')
+    img_io.seek(0)
+
+    # Send the image back to the client
+    return send_file(img_io, mimetype='image/png')
+
+
+@app.route('/ndbi', methods=['POST'])
+def ndbi():
+    image_data = request.files['image']
+    ndvi_image = sp.process_ndbi(image_data)
+
+    # Save the NDVI image to a BytesIO object
+    img_io = BytesIO()
+    ndvi_image.save(img_io, 'PNG')
+    img_io.seek(0)
+
+    # Send the image back to the client
+    return send_file(img_io, mimetype='image/png')

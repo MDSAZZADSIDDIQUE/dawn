@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-const NDVI = () => {
+const SoilMoistureMapping = () => {
   const [image, setImage] = useState(null);
   const [preview, setPreview] = useState(null);
   const [imageURL, setImageURL] = useState(null);
@@ -26,7 +26,7 @@ const NDVI = () => {
     formData.append("image", image);
 
     try {
-      const response = await fetch("http://localhost:5000/process-image", {
+      const response = await fetch("http://localhost:5000/soil-moisture-map", {
         method: "POST",
         body: formData,
       });
@@ -55,7 +55,7 @@ const NDVI = () => {
           <div className="card bg-base-100 shadow-xl bg-opacity-75 w-96">
             <div className="card-body flex justify-center items-center space-y-6">
               <h2 className="card-title text-3xl">
-                Normalized Difference Vegetation Index (NDVI) Prediction
+                Soil Moisture Mapping (NDMI or NDWI)
               </h2>
               <form
                 onSubmit={handleSubmit}
@@ -92,4 +92,4 @@ const NDVI = () => {
   );
 };
 
-export default NDVI;
+export default SoilMoistureMapping;

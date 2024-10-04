@@ -1,11 +1,11 @@
 const NavbarForHomePage = () => {
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar absolute">
       <div className="navbar-start">
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <a className="btn btn-ghost text-xl text-primary-content">DAWN</a>
       </div>
       <div className="navbar-end">
-        <a className="btn">Button</a>
+        <a className="btn">Login</a>
       </div>
     </div>
   );

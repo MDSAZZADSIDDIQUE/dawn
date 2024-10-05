@@ -83,19 +83,19 @@ By integrating these AI technologies, we ensured that our project could offer ad
 ---
 
 ## Google Drive Link for Saved Models
-[Link to Saved Models](#)
+[Link to Saved Models](https://drive.google.com/drive/folders/1majfwbNjhJy7tRUsVbZitg570h5IrxkQ)
 
 ---
 
 ## Space Agency Data:
-- **Vegetation Data**: https://www.earthdata.nasa.gov/learn/pathfinders/agricultural-and-water-resources-data-pathfinder/find-data#vegetation
-- **Land Surface Properties**: https://www.earthdata.nasa.gov/learn/pathfinders/agricultural-and-water-resources-data-pathfinder/find-data#land-surface-properties
-- **Weather Data**: https://www.earthdata.nasa.gov/learn/pathfinders/agricultural-and-water-resources-data-pathfinder/find-data#weather
-- **Exoplanets**: https://science.nasa.gov/exoplanets/
+- [**Vegetation Data**](https://www.earthdata.nasa.gov/learn/pathfinders/agricultural-and-water-resources-data-pathfinder/find-data#vegetation)
+- [**Land Surface Properties**](https://www.earthdata.nasa.gov/learn/pathfinders/agricultural-and-water-resources-data-pathfinder/find-data#land-surface-properties)
+- [**Weather Data**](https://www.earthdata.nasa.gov/learn/pathfinders/agricultural-and-water-resources-data-pathfinder/find-data#weather)
+- [**Exoplanets**](https://science.nasa.gov/exoplanets/)
 
 ---
 
 ## References:
-- **Freepik**: https://www.freepik.com/
-- **Pexels**: https://www.pexels.com/
-- **Poly Pizza**: https://poly.pizza/
+- [**Freepik**](https://www.freepik.com/)
+- [**Pexels**](https://www.pexels.com/)
+- [**Poly Pizza**](https://poly.pizza/)
